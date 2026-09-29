@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Execute os comandos Maven na raiz do projeto, onde fica este pom.xml.
+    Os fontes ficam em src/main/java. Para iniciar o cliente grafico:
+
+        mvn javafx:run
+
+    O Maven baixa o JavaFX automaticamente na primeira execucao (requer
+    internet nesse primeiro momento). Consulte o README.md para compilar
+    o projeto e executar o servidor e o cliente de console.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.edu.disciplina</groupId>
+    <artifactId>poc-cliente-servidor</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javafx.version>21.0.2</javafx.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>br.edu.disciplina.cliente.ClienteGUI</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
